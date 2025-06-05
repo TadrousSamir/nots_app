@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:todoappwithapi/todo_list.dart';
+import 'package:todoappwithapi/views/notes_view.dart';
 
 void main() {
-  runApp(const MaterialApp(home: TodoList(),
-  debugShowCheckedModeBanner: false,
-  ));
+  runApp(const NotesApp());
+}
+
+class NotesApp extends StatelessWidget {
+  const NotesApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(brightness:Brightness.dark),
+      home:const NotesView(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
 }
 
 
