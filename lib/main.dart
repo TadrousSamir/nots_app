@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:todoappwithapi/routes/app_pages.dart';
+import 'package:todoappwithapi/routes/app_routes.dart';
 import 'package:todoappwithapi/views/notes_view.dart';
 
 void main() {
@@ -10,9 +13,12 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(brightness:Brightness.dark),
-      home:const NotesView(),
+    return GetMaterialApp(
+      theme: ThemeData(brightness:Brightness.dark,
+      fontFamily: 'Poppins',
+      ),
+      initialRoute: AppRoutes.NotesView,
+      getPages: appPages(),
       debugShowCheckedModeBanner: false,
     );
   }

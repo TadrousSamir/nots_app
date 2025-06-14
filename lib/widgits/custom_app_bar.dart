@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../utilty/constant.dart';
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
+  const CustomAppBar({super.key, required this.title,required this.icon});
+    final String title;
+    final IconData icon;
   @override
   Widget build(BuildContext context) {
     double screenWidth = ScreenUtils.getWidth(context);
@@ -11,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
     return  Row(
       children: [
           Expanded(
-            child:const Text("Notes",style:
+            child: Text(title,style:
             TextStyle(fontSize: 28),),
           ),
 
@@ -21,9 +22,9 @@ class CustomAppBar extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(.05),
             borderRadius: BorderRadius.circular(16)
-            
+
           ),
-          child:const Center(child: Icon(Icons.search,size: 30,),
+          child: Center(child: Icon(icon,size: 30,),
           ) ,
         )
       ],
